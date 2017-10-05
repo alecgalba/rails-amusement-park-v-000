@@ -1,0 +1,35 @@
+<div>
+  User Name: <%= @user.name %>
+</div>
+
+<div>
+  User Mood: <%= @user.mood %>
+</div>
+
+<div>
+  User Happiness Level: <%= @user.happiness %>
+</div>
+
+<div>
+  User Nause Level: <%= @user.nausea %>
+</div>
+
+<div>
+  Number of Tickets: <%= @user.tickets %>
+</div>
+
+<div>
+  User Height(in inches): <%= @user.height %>
+</div>
+
+<div>
+  <% if @user.admin %>
+    <h6>*ADMIN CLEARANCE*</h6>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "See attractions", attractions_path %>
+</div>
+
+<%= link_to "Log Out", {:action => :destroy, :controller => :sessions}, :method => :post %>

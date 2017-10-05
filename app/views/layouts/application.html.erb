@@ -20,6 +20,10 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" href="<%= new_user_path(@user) %>"/>Sign Up</a>
+        <a class="navbar-brand" href="<%= signin_path %>"/>Sign In</a>
+        <a class="navbar-brand" data-method="post" href="<%= logout_path %>"/>Sign Out</a>
+        <a class="navbar-brand" href="<%= attractions_path %>"/>See attractions</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -31,6 +35,9 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
       <%= yield %>
     </div>
 
